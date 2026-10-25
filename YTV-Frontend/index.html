@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Y-TV | Homepage</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Header / Navigation -->
+    <header>
+        <div class="logo-container">
+            <!-- Make sure you have a logo.png in your images folder -->
+            <img src="images/logo.png" alt="Y-TV Logo" onerror="this.style.display='none'">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="pillars.html">Our Pillars</a></li>
+                <li><a href="leadership.html">Leadership</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="get-involved.html" class="btn btn-primary">Get Involved</a></li>
+            </ul>
+        </nav>
+    </header>
+
+         <!-- Image Slideshow -->
+    <section class="slideshow-container">
+        
+        <!-- Slide 1 -->
+        <div class="slide active" style="background-image: url('images/slide1.jpg');">
+            <div class="slide-content">
+                <h1>Empowering Youth.<br>Transforming Communities.</h1>
+                <a href="get-involved.html" class="btn btn-primary">Join the Movement</a>
+            </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="slide" style="background-image: url('images/slide2.jpg');">
+            <div class="slide-content">
+                <h1>Innovating for a <span class="green-text">Prosperous Kenya</span></h1>
+                <a href="pillars.html" class="btn btn-secondary">Explore Our Pillars</a>
+            </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="slide" style="background-image: url('images/slide3.jpg');">
+            <div class="slide-content">
+                <h1>Uniting All 47 Counties<br>Toward <span class="red-text">Vision 2060</span></h1>
+                <a href="about.html" class="btn btn-primary">Learn About Us</a>
+            </div>
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="slide" style="background-image: url('images/slide4.jpg');">
+            <div class="slide-content">
+                <h1>Grassroots <span class="green-text">Innovation</span></h1>
+                <a href="get-involved.html" class="btn btn-secondary">Get Involved Today</a>
+            </div>
+        </div>
+
+        <!-- Slide 5 -->
+        <div class="slide" style="background-image: url('images/slide5.jpg');">
+            <div class="slide-content">
+                <h1>Building a <span class="red-text">Better Future</span><br>Together</h1>
+                <a href="contact.html" class="btn btn-primary">Contact Us</a>
+            </div>
+        </div>
+
+        <!-- Navigation Dots (5 dots now) -->
+        <div class="dots-container">
+            <span class="dot active" onclick="currentSlide(0)"></span>
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+        </div>
+
+    </section>
+
+    <!-- 5 Pillars Section -->
+    <section class="container">
+        <h2 class="section-title">Our 5 Pillars</h2>
+        <div class="grid-5">
+            <div class="pillar-card">
+                <i class="fa-solid fa-users"></i>
+                <h3>Empowerment</h3>
+                <p>Equipping young people with practical skills and actionable knowledge.</p>
+            </div>
+            <div class="pillar-card">
+                <i class="fa-solid fa-lightbulb"></i>
+                <h3>Innovation</h3>
+                <p>Embracing forward-thinking creativity and digital solutions.</p>
+            </div>
+            <div class="pillar-card">
+                <i class="fa-solid fa-handshake"></i>
+                <h3>Collaboration</h3>
+                <p>Believing in the synergistic power of strategic partnerships.</p>
+            </div>
+            <div class="pillar-card">
+                <i class="fa-solid fa-bullseye"></i>
+                <h3>Impact</h3>
+                <p>Acting decisively today to create measurable, sustainable change.</p>
+            </div>
+            <div class="pillar-card">
+                <i class="fa-solid fa-chart-line"></i>
+                <h3>Growth</h3>
+                <p>Fostering continuous personal development and progress.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <h2 style="margin-bottom: 20px;">Y-TV</h2>
+        <p>Empowering Youth. Transforming Communities. Building Kenya 2060.</p>
+        <p>Email: info@ytv.or.ke | Phone: +254 700 123 456</p>
+        <div class="footer-bottom">
+            &copy; 2026 Y-TV. All Rights Reserved.
+        </div>
+    </footer>
+
+            <script>
+        let slideIndex = 0;
+        const slides = document.querySelectorAll(".slide");
+        const dots = document.querySelectorAll(".dot");
+        let slideInterval;
+
+        function showSlides(n) {
+            slides.forEach(slide => slide.classList.remove("active"));
+            dots.forEach(dot => dot.classList.remove("active"));
+            
+            if (n >= slides.length) { slideIndex = 0; }
+            if (n < 0) { slideIndex = slides.length - 1; }
+            
+            slides[slideIndex].classList.add("active");
+            dots[slideIndex].classList.add("active");
+        }
+
+        function nextSlide() {
+            slideIndex++;
+            showSlides(slideIndex);
+        }
+
+        function currentSlide(n) {
+            slideIndex = n;
+            showSlides(slideIndex);
+            resetTimer(); 
+        }
+
+        function startTimer() {
+            slideInterval = setInterval(nextSlide, 5000); // 5 seconds
+        }
+
+        function resetTimer() {
+            clearInterval(slideInterval);
+            startTimer();
+        }
+
+        startTimer();
+    </script>
+</body>
+</html>

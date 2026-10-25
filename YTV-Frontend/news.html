@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News & Updates | Y-TV</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Extra CSS just for the News Page */
+        .featured-news {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 60px;
+            border-top: 6px solid var(--kenyan-red);
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            background: #000;
+        }
+
+        .video-container video {
+            width: 100%;
+            max-height: 500px;
+            display: block;
+            object-fit: cover;
+        }
+
+        .featured-content {
+            padding: 40px;
+        }
+
+        .date-badge {
+            background: var(--kenyan-green);
+            color: var(--white);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .news-card {
+            background: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+            border-bottom: 4px solid var(--kenyan-red);
+        }
+
+        .news-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .news-card:nth-child(even) { border-bottom-color: var(--kenyan-green); }
+
+        .news-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .news-card-content {
+            padding: 25px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <img src="images/logo.png" alt="Y-TV Logo" onerror="this.style.display='none'">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="pillars.html">Our Pillars</a></li>
+                <li><a href="leadership.html">Leadership</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="get-involved.html" class="btn btn-primary">Get Involved</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="container">
+        <h2 class="section-title">News & Updates</h2>
+
+        <!-- FEATURED NEWS: Rally in Shanzu -->
+        <div class="featured-news">
+            <!-- Video Player -->
+            <div class="video-container">
+                <!-- Replace 'images/rally-video.mp4' with your actual video file -->
+                <video controls poster="images/rally-photo.jpg">
+                    <source src="images/rally-video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            
+            <div class="featured-content">
+                <span class="date-badge"><i class="fa-regular fa-calendar"></i> October 1, 2026</span>
+                <h2 style="font-size: 2rem; margin-bottom: 15px;">Executive Director Addresses the Nation at Shanzu Rally</h2>
+                <p style="font-size: 1.1rem; margin-bottom: 20px;">
+                    Our Executive Director took the stage in front of the President and thousands of Kenyans at the historic Shanzu rally. In a powerful speech, they outlined the Y-TV movement's commitment to uniting the youth across all 47 counties and driving the Vision 2060 agenda forward.
+                </p>
+                <p>
+                    "The youth are not just the leaders of tomorrow; we are the partners of today. Y-TV is here to ensure that every young Kenyan has a seat at the table," the Director stated.
+                </p>
+            </div>
+        </div>
+
+        <!-- LATEST MEETINGS & UPDATES -->
+        <h3 style="font-size: 2rem; margin-bottom: 30px; border-left: 5px solid var(--kenyan-green); padding-left: 15px;">Recent Y-TV Meetings</h3>
+        
+        <div class="news-grid">
+            
+            <!-- Meeting 1 -->
+            <div class="news-card">
+                <img src="images/meeting1.jpg" alt="Y-TV Strategy Meeting">
+                <div class="news-card-content">
+                    <small style="color: #666; font-weight: bold;">October 15, 2026</small>
+                    <h3 class="red-text" style="margin: 10px 0; font-size: 1.3rem;">National Strategy Planning</h3>
+                    <p>The core leadership team met in Nairobi to finalize the 2027 county expansion roadmap and budget allocation.</p>
+                </div>
+            </div>
+
+            <!-- Meeting 2 -->
+            <div class="news-card">
+                <img src="images/meeting2.jpg" alt="Y-TV Tech Hub Visit">
+                <div class="news-card-content">
+                    <small style="color: #666; font-weight: bold;">October 10, 2026</small>
+                    <h3 class="green-text" style="margin: 10px 0; font-size: 1.3rem;">Partnership Meeting with Tech Hubs</h3>
+                    <p>Y-TV representatives met with local innovation hubs to discuss free digital skills training for 10,000 youths.</p>
+                </div>
+            </div>
+
+            <!-- Meeting 3 -->
+            <div class="news-card">
+                <img src="images/meeting3.jpg" alt="Y-TV Grassroots Meeting">
+                <div class="news-card-content">
+                    <small style="color: #666; font-weight: bold;">October 5, 2026</small>
+                    <h3 class="red-text" style="margin: 10px 0; font-size: 1.3rem;">Coastal Region Grassroots Forum</h3>
+                    <p>Youth leaders from Mombasa and Kilifi counties gathered to discuss community action plans for the upcoming quarter.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <h2 style="margin-bottom: 20px;">Y-TV</h2>
+        <p>Empowering Youth. Transforming Communities. Building Kenya 2060.</p>
+        <p>Email: info@ytv.or.ke | Phone: +254 700 123 456</p>
+        <div class="footer-bottom">
+            &copy; 2026 Y-TV. All Rights Reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
